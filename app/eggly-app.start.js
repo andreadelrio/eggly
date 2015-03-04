@@ -35,6 +35,26 @@ angular.module('Eggly',[
 	$scope.isCurrentCategory = isCurrentCategory;
 	$scope.setCurrentCategory = setCurrentCategory;
 
+
+	//-------------------------------------------------------------------------------------------------
+	// CRUD
+	//-------------------------------------------------------------------------------------------------
+	function resetCreateForm(){
+		$scope.newBookmark = {
+			title: '',
+			url: '',
+			category: $scope.currentCategory
+		}
+	}
+	function createBookmark(bookmark){
+		bookmark.id = $scope.bookmarks.length;
+		bookmark.category = $scope.currentCategory;
+		$scope.bookmarks.push(bookmark);
+
+		resetCreateForm();
+	}
+
+	$scope.createBookmark = createBookmark;
 	//-------------------------------------------------------------------------------------------------
 	// CREATING AND EDITING STATES
 	//-------------------------------------------------------------------------------------------------
