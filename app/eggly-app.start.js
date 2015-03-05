@@ -55,6 +55,13 @@ angular.module('Eggly',[
 	}
 
 	$scope.createBookmark = createBookmark;
+	$scope.editedBookmark = null;
+
+	function setEditedBookmark(bookmark) {
+		$scope.editedBookmark = angular.copy(bookmark);
+	}
+	
+	$scope.setEditedBookmark = setEditedBookmark;
 	//-------------------------------------------------------------------------------------------------
 	// CREATING AND EDITING STATES
 	//-------------------------------------------------------------------------------------------------
